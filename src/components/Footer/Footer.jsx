@@ -1,4 +1,6 @@
 // src/components/Footer/Footer.jsx
+import { FaCode, FaHeart, FaGithub, FaLinkedin, FaTelegram, FaEnvelope, FaHome, FaProjectDiagram, FaTools, FaUser } from 'react-icons/fa'
+import { SiReact, SiVite } from 'react-icons/si'
 import styles from './Footer.module.css'
 
 const Footer = () => {
@@ -11,23 +13,26 @@ const Footer = () => {
         <div className={styles.footerContent}>
           {/* BRAND SECTION */}
           <div className={styles.brandSection}>
-            <h3 className={styles.logo}>AZIZJON<span>.DEV</span></h3>
+            <div className={styles.logo}>
+              <FaCode className={styles.logoIcon} />
+              <span>AZIZJON</span>.DEV
+            </div>
             <p className={styles.brandText}>
-              Zamonaviy veb-ilovalar va interfeyslar yarataman. 
+              <FaHeart className={styles.heartIcon} /> Zamonaviy veb-ilovalar va interfeyslar yarataman. 
               Har bir loyiha yangi imkoniyat va tajriba.
             </p>
             <div className={styles.socialLinks}>
               <a href="#" className={styles.socialLink} title="GitHub">
-                <span className={styles.socialIcon}>💻</span>
+                <FaGithub />
               </a>
               <a href="#" className={styles.socialLink} title="LinkedIn">
-                <span className={styles.socialIcon}>💼</span>
+                <FaLinkedin />
               </a>
               <a href="#" className={styles.socialLink} title="Telegram">
-                <span className={styles.socialIcon}>📱</span>
+                <FaTelegram />
               </a>
               <a href="#" className={styles.socialLink} title="Email">
-                <span className={styles.socialIcon}>📧</span>
+                <FaEnvelope />
               </a>
             </div>
           </div>
@@ -36,10 +41,22 @@ const Footer = () => {
           <div className={styles.linksSection}>
             <h4>Tez Havolalar</h4>
             <ul className={styles.linksList}>
-              <li><a href="#home">Bosh Sahifa</a></li>
-              <li><a href="#projects">Loyihalar</a></li>
-              <li><a href="#skills">Ko'nikmalar</a></li>
-              <li><a href="#contact">Bog'lanish</a></li>
+              <li>
+                <FaHome className={styles.linkIcon} />
+                <a href="#home">Bosh Sahifa</a>
+              </li>
+              <li>
+                <FaProjectDiagram className={styles.linkIcon} />
+                <a href="#projects">Loyihalar</a>
+              </li>
+              <li>
+                <FaTools className={styles.linkIcon} />
+                <a href="#skills">Ko'nikmalar</a>
+              </li>
+              <li>
+                <FaUser className={styles.linkIcon} />
+                <a href="#contact">Bog'lanish</a>
+              </li>
             </ul>
           </div>
 
@@ -47,10 +64,10 @@ const Footer = () => {
           <div className={styles.linksSection}>
             <h4>Xizmatlar</h4>
             <ul className={styles.linksList}>
-              <li>Veb Dasturlash</li>
-              <li>Frontend Development</li>
-              <li>Backend Development</li>
-              <li>Responsive Design</li>
+              <li><FaCode className={styles.serviceIcon} /> Veb Dasturlash</li>
+              <li><FaMobile className={styles.serviceIcon} /> Frontend Development</li>
+              <li><FaServer className={styles.serviceIcon} /> Backend Development</li>
+              <li><FaPaintBrush className={styles.serviceIcon} /> Responsive Design</li>
             </ul>
           </div>
 
@@ -59,15 +76,15 @@ const Footer = () => {
             <h4>Aloqa</h4>
             <div className={styles.contactInfo}>
               <div className={styles.contactItem}>
-                <span className={styles.contactIcon}>📧</span>
+                <FaEnvelope className={styles.contactIcon} />
                 <span>azizjon@example.com</span>
               </div>
               <div className={styles.contactItem}>
-                <span className={styles.contactIcon}>📱</span>
+                <FaPhone className={styles.contactIcon} />
                 <span>+998 90 123 45 67</span>
               </div>
               <div className={styles.contactItem}>
-                <span className={styles.contactIcon}>📍</span>
+                <FaMapMarkerAlt className={styles.contactIcon} />
                 <span>Toshkent, Uzbekistan</span>
               </div>
             </div>
@@ -77,10 +94,13 @@ const Footer = () => {
         {/* BOTTOM BAR */}
         <div className={styles.bottomBar}>
           <div className={styles.copyright}>
+            <FaCode className={styles.copyrightIcon} />
             © {currentYear} Azizjon Norimboyev. Barcha huquqlar himoyalangan.
           </div>
           <div className={styles.madeWith}>
-            ❤️ bilan yaratildi <strong>React</strong> va <strong>Vite</strong> bilan
+            <FaHeart className={styles.heartIcon} /> bilan yaratildi 
+            <SiReact className={styles.techIcon} title="React" />
+            <SiVite className={styles.techIcon} title="Vite" />
           </div>
         </div>
 
@@ -88,12 +108,13 @@ const Footer = () => {
         <button 
           className={styles.backToTop}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          title="Yuqoriga chiqish"
         >
-          ⬆️
+          <FaArrowUp />
         </button>
       </div>
     </footer>
   )
 }
 
-export default Footer
+export default Contact
