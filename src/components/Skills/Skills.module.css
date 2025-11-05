@@ -1,0 +1,90 @@
+/* src/components/Skills/Skills.module.css */
+.skills {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  background: linear-gradient(45deg, #00ff88, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.skillItem {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.skillName {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.skillPercent {
+  color: #00ff88;
+  font-weight: bold;
+}
+
+.skillBar {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skillProgress {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+  box-shadow: 0 0 10px currentColor;
+}
+
+.techStack h3 {
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.tech {
+  background: linear-gradient(45deg, #00ff88, #00ccff);
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
