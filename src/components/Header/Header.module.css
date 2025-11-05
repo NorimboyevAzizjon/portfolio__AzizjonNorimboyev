@@ -4,19 +4,29 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  background: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(20px);
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  border-bottom: 1px solid rgba(0, 255, 136, 0.3);
+  border-bottom: 2px solid transparent;
+  background: linear-gradient(135deg, rgba(10, 10, 10, 0.95), rgba(20, 20, 30, 0.95)) padding-box,
+              linear-gradient(45deg, #00ff88, #00ccff, #ff00ff) border-box;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-size: 1.5rem;
   font-weight: bold;
   color: #00ff88;
+}
+
+.logoIcon {
+  color: #00ccff;
+  font-size: 1.8rem;
 }
 
 .logo span {
@@ -29,12 +39,23 @@
 }
 
 .nav a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   color: white;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
   font-weight: 500;
 }
 
 .nav a:hover {
   color: #00ff88;
+  background: rgba(0, 255, 136, 0.1);
+  transform: translateY(-2px);
+}
+
+.navIcon {
+  font-size: 1.1rem;
 }

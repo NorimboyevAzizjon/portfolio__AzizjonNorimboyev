@@ -30,30 +30,39 @@
   filter: blur(60px);
   opacity: 0.3;
   animation: float 6s ease-in-out infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .shape1 {
-  width: 300px;
-  height: 300px;
+  width: 200px;
+  height: 200px;
   top: 10%;
   left: 10%;
   animation-delay: 0s;
 }
 
 .shape2 {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   top: 60%;
   right: 10%;
   animation-delay: 2s;
 }
 
 .shape3 {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   bottom: 20%;
   left: 20%;
   animation-delay: 4s;
+}
+
+.techIcon {
+  font-size: 3rem;
+  opacity: 0.7;
+  color: white;
 }
 
 @keyframes float {
@@ -65,12 +74,31 @@
   text-align: center;
   z-index: 2;
   position: relative;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.heroBadge {
+  display: inline-block;
+  background: linear-gradient(45deg, #00ff88, #00ccff);
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 900;
   margin-bottom: 1rem;
+  background: linear-gradient(45deg, #ffffff, #cccccc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradientText {
   background: linear-gradient(45deg, #00ff88, #00ccff, #ff00ff);
   background-size: 200% 200%;
   -webkit-background-clip: text;
@@ -84,16 +112,34 @@
   100% { background-position: 0% 50% }
 }
 
-.gradientText {
-  background: linear-gradient(45deg, #00ff88, #00ccff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.typeAnimation {
+  margin-bottom: 2rem;
 }
 
 .typeAnimation h2 {
   font-size: 2rem;
   color: #00ff88;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.animatedUnderline {
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(45deg, #00ff88, #00ccff);
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.heroDescription {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.highlight {
+  color: #00ff88;
+  font-weight: bold;
 }
 
 .heroButtons {
@@ -101,9 +147,13 @@
   gap: 1rem;
   justify-content: center;
   margin: 2rem 0;
+  flex-wrap: wrap;
 }
 
 .btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 12px 30px;
   border-radius: 50px;
   font-weight: bold;
@@ -136,26 +186,62 @@
   transform: translateY(-3px);
 }
 
-.socialStats {
+.btnIcon {
+  font-size: 1.1rem;
+}
+
+.socialLinks {
   display: flex;
   justify-content: center;
-  gap: 3rem;
-  margin-top: 3rem;
+  gap: 1rem;
+  margin: 2rem 0;
 }
 
-.stat {
-  text-align: center;
-}
-
-.stat strong {
-  display: block;
-  font-size: 2rem;
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  border-radius: 50%;
   color: #00ff88;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.3rem;
 }
 
-.stat span {
+.socialLink:hover {
+  background: #00ff88;
+  color: black;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
+}
+
+.techStack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
   color: #ccc;
-  font-size: 0.9rem;
+}
+
+.techIcons {
+  display: flex;
+  gap: 1rem;
+}
+
+.techIcons svg {
+  font-size: 1.5rem;
+  color: #00ff88;
+  transition: all 0.3s ease;
+}
+
+.techIcons svg:hover {
+  color: #00ccff;
+  transform: scale(1.2);
 }
 
 .scrollIndicator {
@@ -163,6 +249,52 @@
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
   color: #00ff88;
+}
+
+.mouse {
+  width: 24px;
+  height: 40px;
+  border: 2px solid #00ff88;
+  border-radius: 12px;
+  position: relative;
+}
+
+.wheel {
+  width: 4px;
+  height: 8px;
+  background: #00ff88;
+  border-radius: 2px;
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  100% { transform: translateX(-50%) translateY(12px); opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .heroButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
 }
