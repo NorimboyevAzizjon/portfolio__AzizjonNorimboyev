@@ -7,16 +7,36 @@
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
 .title {
-  text-align: center;
-  font-size: 3rem;
-  margin-bottom: 3rem;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.gradientText {
   background: linear-gradient(45deg, #00ff88, #00ccff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+}
+
+.highlight {
+  color: #00ff88;
+  font-weight: 600;
 }
 
 .skillsGrid {
@@ -30,7 +50,7 @@
   background: rgba(255, 255, 255, 0.05);
   padding: 1.5rem;
   border-radius: 15px;
-  border: 1px solid rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .skillHeader {
@@ -40,9 +60,20 @@
   margin-bottom: 1rem;
 }
 
+.skillInfo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.skillIcon {
+  font-size: 1.5rem;
+  color: #00ff88;
+}
+
 .skillName {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: white;
 }
 
@@ -63,28 +94,61 @@
   height: 100%;
   border-radius: 10px;
   transition: width 1s ease-in-out;
-  box-shadow: 0 0 10px currentColor;
 }
 
-.techStack h3 {
-  text-align: center;
-  color: white;
-  margin-bottom: 2rem;
+.techCategories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.techCategory {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.categoryIcon {
   font-size: 1.5rem;
+  color: #00ff88;
+}
+
+.categoryHeader h4 {
+  color: white;
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 .techList {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
+  gap: 0.5rem;
 }
 
-.tech {
-  background: linear-gradient(45deg, #00ff88, #00ccff);
-  color: black;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: bold;
-  font-size: 0.9rem;
+.techItem {
+  background: rgba(0, 255, 136, 0.1);
+  color: #00ff88;
+  padding: 0.4rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .techCategories {
+    grid-template-columns: 1fr;
+  }
 }
