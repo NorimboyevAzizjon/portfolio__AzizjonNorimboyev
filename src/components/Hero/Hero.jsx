@@ -1,56 +1,29 @@
-// src/components/Hero/Hero.jsx
-import React from 'react';
-import { FaGithub, FaLinkedin, FaTelegram, FaDownload, FaCode } from 'react-icons/fa';
-import styles from './Hero.module.css';
+// Hero/Hero.jsx
+import styles from './Hero.module.css'
 
 const Hero = () => {
   return (
     <section id="home" className={styles.hero}>
       <div className={styles.container}>
         <div className={styles.content}>
-          <div className={styles.badge}>
-            🚀 Portfolio 2024
-          </div>
-          
           <h1 className={styles.title}>
-            Salom, Men <span className={styles.gradientText}>Azizjon Norimboyev</span>
+            Salom, men <span className={styles.highlight}>Frontend Developer</span>man
           </h1>
-          
-          <h2 className={styles.subtitle}>
-            <FaCode className={styles.subtitleIcon} />
-            Full Stack Developer
-          </h2>
-
           <p className={styles.description}>
-            React, Node.js va JavaScript bilan zamonaviy veb-ilovalar yarataman
+            Men zamonaviy va interaktiv veb ilovalar yaratishga ixtisoslashgan dasturchiman.
+            React, JavaScript va zamonaviy CSS texnologiyalaridan foydalanaman.
           </p>
-
           <div className={styles.buttons}>
-            <button className={styles.primaryBtn}>
-              <FaProjectDiagram className={styles.btnIcon} />
-              Loyihalarimni Ko'ring
-            </button>
-            <button className={styles.secondaryBtn}>
-              <FaDownload className={styles.btnIcon} />
-              CV Yuklab Olish
-            </button>
+            <a href="#projects" className={styles.primaryBtn}>Loyihalarim</a>
+            <a href="#contact" className={styles.secondaryBtn}>Bog'lanish</a>
           </div>
-
-          <div className={styles.socialLinks}>
-            <a href="#" className={styles.socialLink}>
-              <FaGithub />
-            </a>
-            <a href="#" className={styles.socialLink}>
-              <FaLinkedin />
-            </a>
-            <a href="#" className={styles.socialLink}>
-              <FaTelegram />
-            </a>
-          </div>
+        </div>
+        <div className={styles.image}>
+          <img src="/src/assets/react.svg" alt="Developer" />
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Hero;
+export default Hero

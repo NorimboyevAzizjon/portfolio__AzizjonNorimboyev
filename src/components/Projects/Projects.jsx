@@ -1,91 +1,60 @@
 // src/components/Projects/Projects.jsx
-import React from 'react';
-import { FaGithub, FaExternalLinkAlt, FaCode } from 'react-icons/fa';
-import { SiReact, SiNodedotjs, SiMongodb, SiVue } from 'react-icons/si';
-import styles from './Projects.module.css';
+import styles from './Projects.module.css'
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Platform",
-      description: "Full-stack online store with modern UI/UX, payment integration and admin dashboard",
-      tech: ["React", "Node.js", "MongoDB", "Stripe"],
-      icons: [<SiReact />, <SiNodedotjs />, <SiMongodb />],
-      github: "#",
-      demo: "#"
+      title: 'E-commerce Website',
+      description: 'React va Node.js bilan yaratilgan toʻliq funksionallikdagi onlayn doʻkon',
+      technologies: ['React', 'Node.js', 'MongoDB'],
+      image: '/src/assets/react.svg',
+      link: '#'
     },
     {
       id: 2,
-      title: "Task Management App", 
-      description: "Productivity app with drag & drop, real-time updates and team collaboration",
-      tech: ["Vue.js", "Firebase", "CSS3"],
-      icons: [<SiVue />, <FaCode />],
-      github: "#",
-      demo: "#"
+      title: 'Task Management App',
+      description: 'Kundalik vazifalarni boshqarish uchun interaktiv ilova',
+      technologies: ['React', 'Firebase', 'Material-UI'],
+      image: '/src/assets/react.svg',
+      link: '#'
     },
     {
       id: 3,
-      title: "Weather Dashboard",
-      description: "Real-time weather application with charts and location-based forecasts",
-      tech: ["React", "API", "Chart.js"],
-      icons: [<SiReact />],
-      github: "#", 
-      demo: "#"
+      title: 'Weather Dashboard',
+      description: 'Havo ma\'lumotlarini koʻrsatadigan dashboard',
+      technologies: ['React', 'API', 'Chart.js'],
+      image: '/src/assets/react.svg',
+      link: '#'
     }
-  ];
+  ]
 
   return (
     <section id="projects" className={styles.projects}>
       <div className={styles.container}>
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.title}>
-            Mening <span className={styles.gradientText}>Loyihalarim</span>
-          </h2>
-          <p className={styles.subtitle}>
-            Har bir loyiha yangi <span className={styles.highlight}>challenge</span> va 
-            <span className={styles.highlight}> o'rganish</span> imkoniyati
-          </p>
-        </div>
-        
+        <h2 className={styles.title}>Mening Loyihalarim</h2>
         <div className={styles.projectsGrid}>
           {projects.map(project => (
             <div key={project.id} className={styles.projectCard}>
-              <div className={styles.projectHeader}>
-                <h3>{project.title}</h3>
-                <div className={styles.techIcons}>
-                  {project.icons.map((icon, index) => (
-                    <span key={index} className={styles.techIcon}>
-                      {icon}
-                    </span>
+              <div className={styles.projectImage}>
+                <img src={project.image} alt={project.title} />
+              </div>
+              <div className={styles.projectContent}>
+                <h3 className={styles.projectTitle}>{project.title}</h3>
+                <p className={styles.projectDescription}>{project.description}</p>
+                <div className={styles.technologies}>
+                  {project.technologies.map((tech, index) => (
+                    <span key={index} className={styles.techTag}>{tech}</span>
                   ))}
                 </div>
-              </div>
-
-              <p className={styles.projectDescription}>{project.description}</p>
-
-              <div className={styles.techStack}>
-                {project.tech.map(tech => (
-                  <span key={tech} className={styles.techTag}>{tech}</span>
-                ))}
-              </div>
-
-              <div className={styles.projectLinks}>
-                <a href={project.github} className={styles.link}>
-                  <FaGithub className={styles.linkIcon} />
-                  Code
-                </a>
-                <a href={project.demo} className={styles.link}>
-                  <FaExternalLinkAlt className={styles.linkIcon} />
-                  Live Demo
-                </a>
+                <a href={project.link} className={styles.projectLink}>Ko'rish</a>
               </div>
             </div>
           ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

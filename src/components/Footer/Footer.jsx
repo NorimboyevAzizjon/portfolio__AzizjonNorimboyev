@@ -1,62 +1,35 @@
-// src/components/Footer/Footer.jsx
-import React from 'react';
-import { FaCode, FaHeart, FaGithub, FaLinkedin, FaTelegram, FaEnvelope, FaHome, FaProjectDiagram, FaCogs, FaUser } from 'react-icons/fa';
-import styles from './Footer.module.css';
+// Footer/Footer.jsx
+import styles from './Footer.module.css'
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.footerContent}>
-          <div className={styles.brandSection}>
-            <div className={styles.logo}>
-              <FaCode className={styles.logoIcon} />
-              Azizjon.dev
-            </div>
-            <p className={styles.brandText}>
-              Zamonaviy veb-ilovalar va interfeyslar yarataman
-            </p>
-            <div className={styles.socialLinks}>
-              <a href="#" className={styles.socialLink}>
-                <FaGithub />
-              </a>
-              <a href="#" className={styles.socialLink}>
-                <FaLinkedin />
-              </a>
-              <a href="#" className={styles.socialLink}>
-                <FaTelegram />
-              </a>
-              <a href="#" className={styles.socialLink}>
-                <FaEnvelope />
-              </a>
-            </div>
+          <div className={styles.footerSection}>
+            <h3>Portfolio</h3>
+            <p>Zamonaviy va innovatsion yechimlar yaratishga intilayotgan frontend developer.</p>
           </div>
-
-          <div className={styles.linksSection}>
+          <div className={styles.footerSection}>
             <h4>Tez Havolalar</h4>
-            <div className={styles.linksList}>
-              <a href="#home"><FaHome /> Bosh Sahifa</a>
-              <a href="#projects"><FaProjectDiagram /> Loyihalar</a>
-              <a href="#skills"><FaCogs /> Ko'nikmalar</a>
-              <a href="#contact"><FaUser /> Bog'lanish</a>
-            </div>
+            <a href="#home">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div className={styles.footerSection}>
+            <h4>Ijtimoiy Tarmoqlar</h4>
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Telegram</a>
           </div>
         </div>
-
-        <div className={styles.bottomBar}>
-          <div className={styles.copyright}>
-            <FaCode className={styles.copyrightIcon} />
-            © {currentYear} Azizjon Norimboyev. Barcha huquqlar himoyalangan.
-          </div>
-          <div className={styles.madeWith}>
-            <FaHeart className={styles.heartIcon} /> bilan yaratildi
-          </div>
+        <div className={styles.footerBottom}>
+          <p>&copy; 2024 Portfolio. Barcha huquqlar himoyalangan.</p>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

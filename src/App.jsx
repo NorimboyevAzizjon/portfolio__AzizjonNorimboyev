@@ -1,24 +1,26 @@
 // src/App.jsx
-import React from 'react';
-import Header from './components/Header/Header';
-import Hero from './components/Hero/Hero';
-import Projects from './components/Projects/Projects';
-import Skills from './components/Skills/Skills';
-import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
-import styles from './App.module.css';
+import { useState } from 'react'
+import Header from './components/Header/Header'
+import Hero from './components/Hero/Hero'
+import Skills from './components/Skills/Skills'
+import Projects from './components/Projects/Projects'
+import Contact from './components/Contact/Contact'
+import Footer from './components/Footer/Footer'
+import './App.module.css'
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false)
+
   return (
-    <div className={styles.app}>
-      <Header />
+    <div className={`app ${darkMode ? 'dark' : 'light'}`}>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
       <Hero />
-      <Projects />
       <Skills />
+      <Projects />
       <Contact />
       <Footer />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

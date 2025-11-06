@@ -1,10 +1,17 @@
-/* src/App.module.css */
+/* App.module.css */
 .app {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
-  color: white;
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  overflow-x: hidden;
+  transition: all 0.3s ease;
+}
+
+.app.light {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.app.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
 }
 
 * {
@@ -13,23 +20,8 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1a1a2e;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #00ff88, #00ccff);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #00ccff, #00ff88);
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }

@@ -1,108 +1,85 @@
-// src/components/Contact/Contact.jsx
-import React from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaUser, FaTag, FaComment } from 'react-icons/fa';
-import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa';
-import styles from './Contact.module.css';
+// Contact/Contact.jsx
+import { useState } from 'react'
+import styles from './Contact.module.css'
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    // Formani yuborish logikasi
+    console.log('Form yuborildi:', formData)
+    alert('Xabaringiz yuborildi!')
+    setFormData({ name: '', email: '', message: '' })
+  }
+
   return (
     <section id="contact" className={styles.contact}>
       <div className={styles.container}>
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.title}>
-            Bog'<span className={styles.gradientText}>lanish</span>
-          </h2>
-          <p className={styles.subtitle}>
-            Loyiha yoki hamkorlik uchun menga <span className={styles.highlight}>yozing</span>
-          </p>
-        </div>
-        
+        <h2 className={styles.title}>Bog'lanish</h2>
         <div className={styles.contactContent}>
           <div className={styles.contactInfo}>
-            <div className={styles.infoCard}>
-              <div className={styles.infoIcon}>
-                <FaEnvelope />
+            <h3>Keling, loyihangiz ustida birga ishlaymiz</h3>
+            <p>Men har qanday qiziqarli loyihalar uchun ochiqman. Quyidagi ma'lumotlar orqali men bilan bog'lanishingiz mumkin:</p>
+            <div className={styles.contactItems}>
+              <div className={styles.contactItem}>
+                <span>📧</span>
+                <span>email@example.com</span>
               </div>
-              <div className={styles.infoContent}>
-                <h3>Email</h3>
-                <p>azizjon@example.com</p>
+              <div className={styles.contactItem}>
+                <span>📱</span>
+                <span>+998 90 123 45 67</span>
               </div>
-            </div>
-            
-            <div className={styles.infoCard}>
-              <div className={styles.infoIcon}>
-                <FaPhone />
-              </div>
-              <div className={styles.infoContent}>
-                <h3>Telefon</h3>
-                <p>+998 90 123 45 67</p>
-              </div>
-            </div>
-            
-            <div className={styles.infoCard}>
-              <div className={styles.infoIcon}>
-                <FaMapMarkerAlt />
-              </div>
-              <div className={styles.infoContent}>
-                <h3>Manzil</h3>
-                <p>Toshkent, Uzbekistan</p>
-              </div>
-            </div>
-
-            <div className={styles.socialSection}>
-              <h4>Ijtimoiy Tarmoqlar</h4>
-              <div className={styles.socialLinks}>
-                <a href="#" className={styles.socialLink}>
-                  <FaGithub />
-                </a>
-                <a href="#" className={styles.socialLink}>
-                  <FaLinkedin />
-                </a>
-                <a href="#" className={styles.socialLink}>
-                  <FaTelegram />
-                </a>
+              <div className={styles.contactItem}>
+                <span>📍</span>
+                <span>Toshkent, O'zbekiston</span>
               </div>
             </div>
           </div>
-          
-          <form className={styles.contactForm}>
-            <div className={styles.formGroup}>
-              <div className={styles.inputWrapper}>
-                <FaUser className={styles.inputIcon} />
-                <input type="text" placeholder="Ismingiz" required />
-              </div>
-            </div>
-
-            <div className={styles.formGroup}>
-              <div className={styles.inputWrapper}>
-                <FaEnvelope className={styles.inputIcon} />
-                <input type="email" placeholder="Email manzilingiz" required />
-              </div>
-            </div>
-
-            <div className={styles.formGroup}>
-              <div className={styles.inputWrapper}>
-                <FaTag className={styles.inputIcon} />
-                <input type="text" placeholder="Mavzu" required />
-              </div>
-            </div>
-
-            <div className={styles.formGroup}>
-              <div className={styles.textareaWrapper}>
-                <FaComment className={styles.textareaIcon} />
-                <textarea placeholder="Xabaringiz..." rows="5" required></textarea>
-              </div>
-            </div>
-
+          <form className={styles.contactForm} onSubmit={handleSubmit}>
+            <input
+              type="text"
+              name="name"
+              placeholder="Ismingiz"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email manzilingiz"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Xabaringiz"
+              rows="5"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
             <button type="submit" className={styles.submitBtn}>
-              <FaPaperPlane className={styles.btnIcon} />
               Xabarni Yuborish
             </button>
           </form>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Contact;
+export default Contact
