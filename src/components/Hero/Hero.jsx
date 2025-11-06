@@ -1,87 +1,104 @@
 // src/components/Hero/Hero.jsx
-import { FaGithub, FaLinkedin, FaTelegram, FaDownload } from 'react-icons/fa'
-import { SiReact, SiJavascript, SiNodedotjs } from 'react-icons/si'
-import styles from './Hero.module.css'
+import React from 'react';
+import { FaGithub, FaLinkedin, FaTelegram, FaDownload, FaArrowDown } from 'react-icons/fa';
+import { SiReact, SiJavascript, SiNodedotjs, SiTypescript } from 'react-icons/si';
+import styles from './Hero.module.css';
 
 const Hero = () => {
-  const texts = ['Full Stack Developer', 'React Specialist', 'Problem Solver', 'Tech Enthusiast']
-  
+  const scrollToProjects = () => {
+    document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="home" className={styles.hero}>
-      {/* BACKGROUND ANIMATION */}
-      <div className={styles.heroBackground}>
-        <div className={styles.floatingShapes}>
-          <div className={styles.shape1}><SiReact className={styles.techIcon} /></div>
-          <div className={styles.shape2}><SiJavascript className={styles.techIcon} /></div>
-          <div className={styles.shape3}><SiNodedotjs className={styles.techIcon} /></div>
+      {/* ANIMATED BACKGROUND */}
+      <div className={styles.backgroundAnimation}>
+        <div className={styles.floatingElement} style={{ '--delay': '0s' }}>
+          <SiReact />
+        </div>
+        <div className={styles.floatingElement} style={{ '--delay': '2s' }}>
+          <SiJavascript />
+        </div>
+        <div className={styles.floatingElement} style={{ '--delay': '4s' }}>
+          <SiNodedotjs />
+        </div>
+        <div className={styles.floatingElement} style={{ '--delay': '6s' }}>
+          <SiTypescript />
         </div>
       </div>
-      
-      <div className={styles.heroContent}>
-        <div className={styles.heroBadge}>
-          🚀 Portfolio 2024
-        </div>
-        
-        <h1>
-          Salom, Men <span className={styles.gradientText}>Azizjon Norimboyev</span>
-        </h1>
-        
-        <div className={styles.typeAnimation}>
-          <h2>{texts[0]}</h2>
-          <div className={styles.animatedUnderline}></div>
-        </div>
 
-        <p className={styles.heroDescription}>
-          💻 <strong>React, Node.js, JavaScript</strong> va zamonaviy texnologiyalar bilan 
-          <span className={styles.highlight}> innovatsion loyihalar </span>
-          yarataman
-        </p>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          {/* BADGE */}
+          <div className={styles.badge}>
+            <span className={styles.badgeDot}></span>
+            Full Stack Developer
+          </div>
 
-        <div className={styles.heroButtons}>
-          <button className={`${styles.btn} ${styles.glowBtn}`}>
-            <FaProjectDiagram className={styles.btnIcon} />
-            Loyihalarimni Ko'ring
-          </button>
-          <button className={`${styles.btn} ${styles.outlineBtn}`}>
-            <FaDownload className={styles.btnIcon} />
-            CV Yuklab Olish
-          </button>
-        </div>
+          {/* MAIN HEADING */}
+          <h1 className={styles.title}>
+            Salom, Men{" "}
+            <span className={styles.gradientText}>Azizjon Norimboyev</span>
+          </h1>
 
-        {/* SOCIAL LINKS */}
-        <div className={styles.socialLinks}>
-          <a href="#" className={styles.socialLink} title="GitHub">
-            <FaGithub />
-          </a>
-          <a href="#" className={styles.socialLink} title="LinkedIn">
-            <FaLinkedin />
-          </a>
-          <a href="#" className={styles.socialLink} title="Telegram">
-            <FaTelegram />
-          </a>
-        </div>
+          {/* SUBTITLE */}
+          <p className={styles.subtitle}>
+            Men <span className={styles.highlight}>React</span>,{" "}
+            <span className={styles.highlight}>Node.js</span> va{" "}
+            <span className={styles.highlight}>JavaScript</span> bilan
+            zamonaviy veb-ilovalar yarataman
+          </p>
 
-        {/* TECH STACK */}
-        <div className={styles.techStack}>
-          <span>Tech Stack:</span>
-          <div className={styles.techIcons}>
-            <SiReact title="React" />
-            <SiJavascript title="JavaScript" />
-            <SiNodedotjs title="Node.js" />
-            <FaCode title="HTML/CSS" />
+          {/* CTA BUTTONS */}
+          <div className={styles.buttons}>
+            <button className={styles.primaryBtn} onClick={scrollToProjects}>
+              <FaProjectDiagram className={styles.btnIcon} />
+              Loyihalarimni Ko'ring
+            </button>
+            <button className={styles.secondaryBtn}>
+              <FaDownload className={styles.btnIcon} />
+              CV Yuklab Olish
+            </button>
+          </div>
+
+          {/* SOCIAL LINKS */}
+          <div className={styles.socialLinks}>
+            <a href="#" className={styles.socialLink} aria-label="GitHub">
+              <FaGithub />
+            </a>
+            <a href="#" className={styles.socialLink} aria-label="LinkedIn">
+              <FaLinkedin />
+            </a>
+            <a href="#" className={styles.socialLink} aria-label="Telegram">
+              <FaTelegram />
+            </a>
+          </div>
+
+          {/* STATS */}
+          <div className={styles.stats}>
+            <div className={styles.stat}>
+              <div className={styles.statNumber}>10+</div>
+              <div className={styles.statLabel}>Loyihalar</div>
+            </div>
+            <div className={styles.stat}>
+              <div className={styles.statNumber}>2+</div>
+              <div className={styles.statLabel}>Yil Tajriba</div>
+            </div>
+            <div className={styles.stat}>
+              <div className={styles.statNumber}>100%</div>
+              <div className={styles.statLabel}>Mijoz Qanoati</div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* SCROLL INDICATOR */}
-      <div className={styles.scrollIndicator}>
-        <div className={styles.mouse}>
-          <div className={styles.wheel}></div>
-        </div>
-        <span>Scroll qiling</span>
+        {/* SCROLL INDICATOR */}
+        <button className={styles.scrollIndicator} onClick={scrollToProjects}>
+          <FaArrowDown className={styles.scrollIcon} />
+          <span>Pastga aylantiring</span>
+        </button>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
