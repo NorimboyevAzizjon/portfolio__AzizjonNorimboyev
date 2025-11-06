@@ -1,4 +1,4 @@
-/* App.module.css */
+/* src/App.module.css */
 .app {
   min-height: 100vh;
   transition: all 0.3s ease;
@@ -10,18 +10,33 @@
 }
 
 .app.dark {
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background-color: #0f172a;
+  color: #f8fafc;
 }
 
+/* Smooth transitions for all elements */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.app.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
 }

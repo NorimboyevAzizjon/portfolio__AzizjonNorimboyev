@@ -1,11 +1,11 @@
 /* src/components/Skills/Skills.module.css */
 .skills {
-  padding: 80px 0;
-  background: #f8fafc;
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
 }
 
 .dark .skills {
-  background: #2d3748;
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
 }
 
 .container {
@@ -14,71 +14,143 @@
   padding: 0 20px;
 }
 
-.title {
+.header {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 3rem;
-  color: #1f2937;
+  margin-bottom: 4rem;
 }
 
-.dark .title {
-  color: #f9fafb;
+.title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.dark .subtitle {
+  color: #d1d5db;
 }
 
 .skillsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
 }
 
-.skillItem {
-  background: white;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+.skillCard {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
-.dark .skillItem {
-  background: #374151;
-  color: white;
+.dark .skillCard {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.skillItem:hover {
-  transform: translateY(-5px);
+.skillCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .skillHeader {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.skillIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.dark .skillIcon {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.skillInfo {
+  flex: 1;
 }
 
 .skillName {
+  font-size: 1.25rem;
   font-weight: 600;
-  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: #1f2937;
+}
+
+.dark .skillName {
+  color: white;
 }
 
 .skillPercent {
+  font-size: 1rem;
+  font-weight: 700;
   color: #3b82f6;
-  font-weight: bold;
 }
 
 .skillBar {
   height: 8px;
-  background: #e5e7eb;
-  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
   overflow: hidden;
+  backdrop-filter: blur(10px);
 }
 
 .dark .skillBar {
-  background: #4b5563;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .skillProgress {
   height: 100%;
-  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
-  border-radius: 4px;
-  transition: width 1s ease-in-out;
+  border-radius: 10px;
+  transition: width 1.5s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.skillProgress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
 }
