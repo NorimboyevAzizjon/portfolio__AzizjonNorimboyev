@@ -1,7 +1,7 @@
 // src/components/Projects/Projects.jsx
 import React from 'react';
-import { FaGithub, FaExternalLinkAlt, FaCode, FaMobile, FaServer } from 'react-icons/fa';
-import { SiReact, SiNodedotjs, SiMongodb, SiFirebase, SiVue } from 'react-icons/si';
+import { FaGithub, FaExternalLinkAlt, FaCode } from 'react-icons/fa';
+import { SiReact, SiNodedotjs, SiMongodb, SiVue } from 'react-icons/si';
 import styles from './Projects.module.css';
 
 const Projects = () => {
@@ -13,28 +13,25 @@ const Projects = () => {
       tech: ["React", "Node.js", "MongoDB", "Stripe"],
       icons: [<SiReact />, <SiNodedotjs />, <SiMongodb />],
       github: "#",
-      demo: "#",
-      featured: true
+      demo: "#"
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "Task Management App", 
       description: "Productivity app with drag & drop, real-time updates and team collaboration",
       tech: ["Vue.js", "Firebase", "CSS3"],
-      icons: [<SiVue />, <SiFirebase />, <FaMobile />],
+      icons: [<SiVue />, <FaCode />],
       github: "#",
-      demo: "#",
-      featured: true
+      demo: "#"
     },
     {
       id: 3,
       title: "Weather Dashboard",
       description: "Real-time weather application with charts and location-based forecasts",
       tech: ["React", "API", "Chart.js"],
-      icons: [<SiReact />, <FaServer />],
-      github: "#",
-      demo: "#",
-      featured: false
+      icons: [<SiReact />],
+      github: "#", 
+      demo: "#"
     }
   ];
 
@@ -53,16 +50,7 @@ const Projects = () => {
         
         <div className={styles.projectsGrid}>
           {projects.map(project => (
-            <div 
-              key={project.id} 
-              className={`${styles.projectCard} ${project.featured ? styles.featured : ''}`}
-            >
-              {project.featured && (
-                <div className={styles.featuredBadge}>
-                  ⭐ Featured
-                </div>
-              )}
-              
+            <div key={project.id} className={styles.projectCard}>
               <div className={styles.projectHeader}>
                 <h3>{project.title}</h3>
                 <div className={styles.techIcons}>

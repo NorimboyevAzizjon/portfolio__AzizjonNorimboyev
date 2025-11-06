@@ -1,7 +1,8 @@
 // src/components/Contact/Contact.jsx
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaLinkedin, FaTelegram, FaGithub } from 'react-icons/fa'
-import { SiGmail, SiWhatsapp } from 'react-icons/si'
-import styles from './Contact.module.css'
+import React from 'react';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaPaperPlane, FaUser, FaTag, FaComment } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa';
+import styles from './Contact.module.css';
 
 const Contact = () => {
   return (
@@ -17,7 +18,6 @@ const Contact = () => {
         </div>
         
         <div className={styles.contactContent}>
-          {/* CONTACT INFO */}
           <div className={styles.contactInfo}>
             <div className={styles.infoCard}>
               <div className={styles.infoIcon}>
@@ -26,10 +26,6 @@ const Contact = () => {
               <div className={styles.infoContent}>
                 <h3>Email</h3>
                 <p>azizjon@example.com</p>
-                <a href="mailto:azizjon@example.com" className={styles.contactLink}>
-                  <SiGmail className={styles.linkIcon} />
-                  Email Yuborish
-                </a>
               </div>
             </div>
             
@@ -40,10 +36,6 @@ const Contact = () => {
               <div className={styles.infoContent}>
                 <h3>Telefon</h3>
                 <p>+998 90 123 45 67</p>
-                <a href="tel:+998901234567" className={styles.contactLink}>
-                  <SiWhatsapp className={styles.linkIcon} />
-                  WhatsApp
-                </a>
               </div>
             </div>
             
@@ -54,14 +46,9 @@ const Contact = () => {
               <div className={styles.infoContent}>
                 <h3>Manzil</h3>
                 <p>Toshkent, Uzbekistan</p>
-                <button className={styles.contactLink}>
-                  <FaMapMarkerAlt className={styles.linkIcon} />
-                  Location
-                </button>
               </div>
             </div>
 
-            {/* SOCIAL LINKS */}
             <div className={styles.socialSection}>
               <h4>Ijtimoiy Tarmoqlar</h4>
               <div className={styles.socialLinks}>
@@ -74,40 +61,36 @@ const Contact = () => {
                 <a href="#" className={styles.socialLink}>
                   <FaTelegram />
                 </a>
-                <a href="#" className={styles.socialLink}>
-                  <SiGmail />
-                </a>
               </div>
             </div>
           </div>
           
-          {/* CONTACT FORM */}
           <form className={styles.contactForm}>
             <div className={styles.formGroup}>
               <div className={styles.inputWrapper}>
-                <input type="text" placeholder="Ismingiz" required />
                 <FaUser className={styles.inputIcon} />
+                <input type="text" placeholder="Ismingiz" required />
               </div>
             </div>
 
             <div className={styles.formGroup}>
               <div className={styles.inputWrapper}>
-                <input type="email" placeholder="Email manzilingiz" required />
                 <FaEnvelope className={styles.inputIcon} />
+                <input type="email" placeholder="Email manzilingiz" required />
               </div>
             </div>
 
             <div className={styles.formGroup}>
               <div className={styles.inputWrapper}>
-                <input type="text" placeholder="Mavzu" required />
                 <FaTag className={styles.inputIcon} />
+                <input type="text" placeholder="Mavzu" required />
               </div>
             </div>
 
             <div className={styles.formGroup}>
               <div className={styles.textareaWrapper}>
-                <textarea placeholder="Xabaringiz..." rows="5" required></textarea>
                 <FaComment className={styles.textareaIcon} />
+                <textarea placeholder="Xabaringiz..." rows="5" required></textarea>
               </div>
             </div>
 
@@ -119,7 +102,7 @@ const Contact = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

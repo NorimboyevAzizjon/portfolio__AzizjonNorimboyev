@@ -1,7 +1,7 @@
 // src/components/Skills/Skills.jsx
 import React from 'react';
 import { FaCode, FaServer, FaDatabase, FaTools } from 'react-icons/fa';
-import { SiReact, SiJavascript, SiNodedotjs, SiMongodb, SiGit, SiCss3, SiHtml5 } from 'react-icons/si';
+import { SiReact, SiJavascript, SiNodedotjs, SiMongodb, SiGit, SiHtml5, SiCss3 } from 'react-icons/si';
 import styles from './Skills.module.css';
 
 const Skills = () => {
@@ -12,29 +12,6 @@ const Skills = () => {
     { name: "Node.js", level: 80, icon: <SiNodedotjs />, color: "#ffcc00" },
     { name: "MongoDB", level: 75, icon: <SiMongodb />, color: "#00ff88" },
     { name: "Git", level: 90, icon: <SiGit />, color: "#00ccff" }
-  ];
-
-  const techCategories = [
-    {
-      title: "Frontend",
-      icon: <FaCode />,
-      tech: ["React", "JavaScript", "HTML5", "CSS3", "Tailwind"]
-    },
-    {
-      title: "Backend", 
-      icon: <FaServer />,
-      tech: ["Node.js", "Express", "REST API"]
-    },
-    {
-      title: "Database",
-      icon: <FaDatabase />,
-      tech: ["MongoDB", "MySQL", "Firebase"]
-    },
-    {
-      title: "Tools",
-      icon: <FaTools />,
-      tech: ["Git", "GitHub", "VSCode", "Figma", "Vite"]
-    }
   ];
 
   return (
@@ -68,24 +45,6 @@ const Skills = () => {
                     background: skill.color
                   }}
                 ></div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div className={styles.techCategories}>
-          {techCategories.map(category => (
-            <div key={category.title} className={styles.techCategory}>
-              <div className={styles.categoryHeader}>
-                <span className={styles.categoryIcon}>{category.icon}</span>
-                <h4>{category.title}</h4>
-              </div>
-              <div className={styles.techList}>
-                {category.tech.map(tech => (
-                  <span key={tech} className={styles.techItem}>
-                    {tech}
-                  </span>
-                ))}
               </div>
             </div>
           ))}

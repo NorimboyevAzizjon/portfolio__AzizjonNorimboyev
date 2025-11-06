@@ -2,7 +2,6 @@
 .projects {
   padding: 100px 0;
   background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 100%);
-  position: relative;
 }
 
 .container {
@@ -55,7 +54,6 @@
   border-radius: 20px;
   padding: 2rem;
   transition: all 0.3s ease;
-  position: relative;
   backdrop-filter: blur(10px);
 }
 
@@ -63,23 +61,6 @@
   transform: translateY(-10px);
   border-color: #00ff88;
   box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
-}
-
-.projectCard.featured {
-  border: 2px solid #00ff88;
-  background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 204, 255, 0.05));
-}
-
-.featuredBadge {
-  position: absolute;
-  top: -10px;
-  right: 20px;
-  background: linear-gradient(45deg, #00ff88, #00ccff);
-  color: black;
-  padding: 0.5rem 1rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: bold;
 }
 
 .projectHeader {

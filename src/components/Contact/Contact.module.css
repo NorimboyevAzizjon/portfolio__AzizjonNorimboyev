@@ -7,23 +7,36 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
 .title {
-  text-align: center;
-  font-size: 3rem;
+  font-size: 3.5rem;
+  font-weight: 800;
   margin-bottom: 1rem;
+  color: white;
+}
+
+.gradientText {
   background: linear-gradient(45deg, #00ff88, #00ccff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .subtitle {
-  text-align: center;
-  color: #ccc;
   font-size: 1.2rem;
-  margin-bottom: 4rem;
+  color: #ccc;
+}
+
+.highlight {
+  color: #00ff88;
+  font-weight: 600;
 }
 
 .contactContent {
@@ -39,34 +52,66 @@
   gap: 2rem;
 }
 
-.contactItem {
+.infoCard {
   display: flex;
   align-items: center;
   gap: 1rem;
   background: rgba(255, 255, 255, 0.05);
   padding: 1.5rem;
   border-radius: 15px;
-  border: 1px solid rgba(0, 255, 136, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
-.contactItem:hover {
+.infoCard:hover {
   border-color: #00ff88;
   transform: translateX(10px);
 }
 
-.icon {
+.infoIcon {
   font-size: 2rem;
+  color: #00ff88;
 }
 
-.contactItem h3 {
+.infoContent h3 {
   color: white;
   margin-bottom: 0.5rem;
 }
 
-.contactItem p {
+.infoContent p {
   color: #ccc;
   margin: 0;
+}
+
+.socialSection h4 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #00ff88;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1.3rem;
+}
+
+.socialLink:hover {
+  background: #00ff88;
+  color: black;
+  transform: translateY(-3px);
 }
 
 .contactForm {
@@ -75,15 +120,43 @@
   gap: 1.5rem;
 }
 
+.formGroup {
+  position: relative;
+}
+
+.inputWrapper, .textareaWrapper {
+  position: relative;
+}
+
+.inputIcon, .textareaIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00ff88;
+  font-size: 1.1rem;
+}
+
+.textareaIcon {
+  top: 1.5rem;
+  transform: none;
+}
+
 .contactForm input,
 .contactForm textarea {
+  width: 100%;
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(0, 255, 136, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  padding: 1rem;
+  padding: 1rem 1rem 1rem 3rem;
   color: white;
   font-size: 1rem;
   transition: all 0.3s ease;
+}
+
+.contactForm textarea {
+  padding-left: 3rem;
+  resize: vertical;
 }
 
 .contactForm input:focus,
@@ -99,6 +172,9 @@
 }
 
 .submitBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
   background: linear-gradient(45deg, #00ff88, #00ccff);
   color: black;
   border: none;
@@ -108,9 +184,25 @@
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
+  justify-content: center;
 }
 
 .submitBtn:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 255, 136, 0.3);
+}
+
+.btnIcon {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .contactContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
 }
